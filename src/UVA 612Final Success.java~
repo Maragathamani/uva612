@@ -16,10 +16,13 @@ class TestMap {
     public static int M = 0;    // Number of data sets.
     public static Integer m = 0;    // Number of Strings.
     public static boolean blank = true;
+//    public static HashMap<Integer, String> cache = new HashMap<Integer, String>();
+//    public static Map<Integer, String> treeMap = new TreeMap<Integer, String>();
 
     public static void main(String[] args) {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        System.out.println("M: ");
         try {
             M = Integer.parseInt(br.readLine());
         } catch (IOException e) {
@@ -29,6 +32,8 @@ class TestMap {
         while (M > 0) {
             Map<Integer, ArrayList<String>> treeMap = new TreeMap<Integer, ArrayList<String>>();
             try {
+
+//                System.out.println();
                 String blankLine = br.readLine();
                 if (blankLine.equals("")) {
 
@@ -55,6 +60,11 @@ class TestMap {
                     }
                 }
 
+//                for (int j = 0; j < m; j++) {
+//                    cache.put(inputCount[j], input[j]);
+//                }
+
+//                treeMap = new TreeMap<Integer, String>(cache);
             } catch (IOException e) {
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             } catch (ArrayIndexOutOfBoundsException e) {
@@ -80,15 +90,32 @@ class TestMap {
         }
         blank = false;
         for (Map.Entry<Integer, ArrayList<String>> entry : map.entrySet()) {
-
+//            System.out.println("Key : " + entry.getKey() + " Value : "
+//                    + entry.getValue());
+//            String[] strings = (String[]) entry.getValue();
             ArrayList<String> temp = entry.getValue();
             for(String n : temp){
                 System.out.println(n);
             }
-
+//            for(String[] arr : entry.getValue()){
+//            System.out.println(Arrays.toString(arr));
+//            }
 
         }
+       /* for(int i=0; i<map.size();i++){
+            if(map.get(i)==null){
 
+            }
+            else{
+                for(String n : map.get(i)){
+                    System.out.println(n);
+                }
+            }
+//            ArrayList<String> temp = map.get(i);
+//            String[] strings = (String[]) map.get(i);
+//            System.out.println(strings);
+        } */
+//        System.out.println("\n");
     }
 
     /*
